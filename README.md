@@ -67,11 +67,10 @@ function updateTable(idTokenClaims) {
 
 ### 環境に合わせて設定すべき構成ファイルは以下となります。
 
-|      |      |
+|      |構成ファイル|
 | ---- | ---- |
 |  Power BI  |  config/config.json  |
 |  Azure AD B2C  |  b2c/authConfig.js<br>b2c/policies.js  |
-|      |      |
 
 ※ config.json にはオリジナル・サンプルのままシークレット情報を格納していますが、本番運用では環境変数に外出しするなど、コード中に直接格納する事は推奨されません。
 
@@ -87,8 +86,8 @@ function updateTable(idTokenClaims) {
 1. ブラウザで `http://localhost:6420` を開きます。
 2. 右上の **Sign-in** ボタンからログインします。一番最初は表示されたログインウィンドウからサインアップを選択しユーザー登録をします。
 
-   <img src="./images/image2.png">
+<img src="./images/image2.png">
 
 3. ログインが成功すると以下のような画面が表示されます。
 
-   <img src="./images/image3.png">
+<img src="./images/image3.png">
