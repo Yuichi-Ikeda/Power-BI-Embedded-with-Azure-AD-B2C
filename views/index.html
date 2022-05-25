@@ -1,0 +1,79 @@
+<!-- Copyright (c) Microsoft Corporation.
+Licensed under the MIT license. -->
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/index.css">
+    <title>Embedded Power BI report</title>
+
+    <!-- msal.min.js can be used in the place of msal.js; included msal.js to make debug easy -->
+    <script id="load-msal" src="https://alcdn.msauth.net/browser/2.15.0/js/msal-browser.js"
+    integrity="sha384-dFzMiVGB5HpWZ+5w5VSif6jhWfNeplSw9ACYmQKZcY2azuT9kCxVWVI9HyfGdkHV"
+    crossorigin="anonymous"></script>
+
+    <!-- To help ensure reliability, Microsoft provides a second CDN -->
+    <script type="text/javascript">
+    if (typeof Msal === 'undefined') document.write(unescape("%3Cscript src='https://alcdn.msftauth.net/browser/2.15.0/js/msal-browser.js' type='text/javascript' crossorigin='anonymous' %3E%3C/script%3E"));
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">Power BI Embedded application built with MSAL.js</a>
+        <div class="btn-group ml-auto dropleft">
+            <button type="button" id="editProfileButton" class="btn btn-secondary d-none" onclick="editProfile()">Edit
+            Profile</button>
+            <button type="button" id="signIn" class="btn btn-secondary" onclick="signIn()">Sign-in</button>
+            <button type="button" id="signOut" class="btn btn-success d-none" onclick="signOut()">Sign-out</button>
+        </div>
+    </nav>
+    <br>
+    <h5 id="title-div" class="card-header text-center">右上の Sign-in ボタンからログインすると Power BI レポートが表示されます。</h5>
+    <h5 id="welcome-div" class="card-header text-center d-none"></h5>
+    <br>
+    <table id="table-div" class="table table-hover d-none">
+      <thead id="table-head-div">
+        <tr>
+          <th>Claim Type</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody id="table-body-div">
+      </tbody>
+    </table>
+    <div id="footer" class="footer-copyright text-center py-3 d-none">
+      <p>以下に Power BI レポートが表示されれば成功です</p>
+    </div>
+      
+    <!-- importing app scripts (load order is important) -->
+    <script type="text/javascript" src="../b2c/policies.js"></script>
+    <script type="text/javascript" src="../b2c/authConfig.js"></script>
+    <script type="text/javascript" src="../b2c/ui.js"></script>
+  
+    <!-- <script type="text/javascript" src="./authRedirect.js"></script> -->
+    <!-- uncomment the above line and comment the line below if you would like to use the redirect flow -->
+    <script type="text/javascript" src="../b2c/authPopup.js"></script>
+
+    <div>
+        <section id="report-container" class="embed-container center-block d-none">
+        </section>
+        <!-- Used to display report embed error messages -->
+        <section class="error-container m-5">
+        </section>
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/powerbi.min.js"></script>
+    <script src="../public/js/index.js"></script>
+</body>
+
+</html>
