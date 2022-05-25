@@ -3,7 +3,7 @@
 ## 概要
 　本サンプルは Power BI Embedded の WEB サイトに Azure AD B2C の認証機能を追加した物となります。システムの全体構成は以下となります。
 
-   <img src="./images/PowerBI_B2C_Architecture.png" width="50%">
+   <img src="./images/PowerBI_B2C_Architecture.png">
 
 ### クラウド実行環境
 - Azure App Service : Linux ベース環境
@@ -26,7 +26,7 @@
 
 1. プロジェクトに b2c フォルダを追加し MSAL.js ライブラリ関連のファイルを追加
 
-      ![Architecture](./images/image1.png)
+      <img src="./images/image1.png">
 
 2. views/index.html に Azure AD B2C 認証処理を追加。詳細はオリジナルサンプルとの diff でご確認ください。
 
@@ -87,8 +87,8 @@ function updateTable(idTokenClaims) {
 1. ブラウザで `http://localhost:6420` を開きます。
 2. 右上の **Sign-in** ボタンからログインします。一番最初は表示されたログインウィンドウからサインアップを選択しユーザー登録をします。
 
-   <img src="./images/image2.png" width="50%">
+   <img src="./images/image2.png">
 
 3. ログインが成功すると以下のような画面が表示されます。
 
-   <img src="./images/image3.png" width="50%">
+   <img src="./images/image3.png">
