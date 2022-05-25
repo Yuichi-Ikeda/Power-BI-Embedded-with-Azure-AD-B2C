@@ -24,13 +24,13 @@
 
 　オリジナルサンプル [Power BI 開発者サンプル (NodeJS)](https://github.com/microsoft/PowerBI-Developer-Samples) に対する主な変更点を記載します。
 
-1. プロジェクトに b2c フォルダを追加し MSAL.js ライブラリ関連のファイルを追加
+1. プロジェクトに b2c フォルダを追加し MSAL.js ライブラリの関連ファイルを追加
 
       <img src="./images/image1.png">
 
 2. views/index.html に Azure AD B2C 認証処理を追加。詳細はオリジナルサンプルとの diff でご確認ください。
 
-3. ログイン完了後に呼ばれる ui.js の updateTable 関数に reportContainer.classList.remove('d-none'); を追加する事で Power BI レポートが表示されるようになります。
+3. ログイン完了後に呼ばれる ui.js の updateTable に reportContainer.classList.remove('d-none'); を追加する事で Power BI レポートが表示されるようになります。
 
 ### ui.js
 ```javascript:ui.js
@@ -54,18 +54,18 @@ function updateTable(idTokenClaims) {
 
 ## サンプル設定
 
-### Power BI の環境設定は、以下の手順に従ってください。
+### Power BI の環境設定は、以下の手順に従ってください
 
 - https://docs.microsoft.com/ja-jp/power-bi/developer/embedded/embed-sample-for-customers?tabs=net-core#method
 
   以下のツールを利用するとウィザード形式で比較的容易に登録が出来たと記憶しています。<br>
   [Set up your Power BI embedding environment](https://app.powerbi.com/embedsetup/AppOwnsData?session_id=ba510dd8-fdbc-4889-adef-6ffaa03b23a5)
 
-###  Azure AD B2C の登録や設定はオリジナルサンプルのこちらの手順に従ってください。
+###  Azure AD B2C の登録や設定はオリジナルサンプルのこちらの手順に従ってください
 
 - https://github.com/Azure-Samples/ms-identity-b2c-javascript-spa#registration
 
-### 環境に合わせて設定すべき構成ファイルは以下となります。
+### 環境に合わせて設定すべき構成ファイルは以下となります
 
 |      |構成ファイル|
 | ---- | ---- |
