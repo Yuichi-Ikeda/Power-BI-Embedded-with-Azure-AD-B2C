@@ -74,7 +74,7 @@ function updateTable(idTokenClaims) {
 
 ※ config.json にはオリジナル・サンプルのままシークレット情報を格納していますが、本番運用では環境変数に外出しするなど、コード中に直接格納する事は推奨されません。
 
-## ビルドと実行
+## 初期化とローカル実行
 
 ```console
     npm isntall
@@ -91,3 +91,7 @@ function updateTable(idTokenClaims) {
 3. ログインが成功すると以下のような画面が表示されます。
 
 <img src="./images/image3.png">
+
+## クラウドへのデプロイ
+
+　Azure App Service でホストされる Web アプリケーションは `https://<xxx>.azurewebsites.net` という URI 形式になります。本サンプルを Azure App Service にデプロイする場合は Azure AD B2C に登録した Redirect URI や、コード中の b2c/authConfig.js に記載の redirectUri, postLogoutRedirectUri で `http://localhost:6420` となっている箇所を適切な URI に変更する必要があります。
