@@ -12,7 +12,7 @@ const msalConfig = {
       authority: b2cPolicies.authorities.signUpSignIn.authority, // Choose sign-up/sign-in user-flow as your default.
       knownAuthorities: [b2cPolicies.authorityDomain], // You must identify your tenant's domain as a known authority.
       redirectUri: "http://localhost:6420", // You must register this URI on Azure Portal/App Registration. Defaults to "window.location.href".
-      postLogoutRedirectUri: "http://localhost:6420/signout", // Simply remove this line if you would like navigate to index page after logout.
+      postLogoutRedirectUri: "", // Simply remove this line if you would like navigate to index page after logout.
       navigateToLoginRequestUrl: false, // If "true", will navigate back to the original request location before processing the auth code response.
     },
     cache: {
